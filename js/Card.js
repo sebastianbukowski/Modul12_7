@@ -1,4 +1,3 @@
-var prefix = "https://cors-anywhere.herokuapp.com/";
 function Card(id, name) {
 	var self = this;
 	this.id = id;
@@ -18,7 +17,7 @@ Card.prototype = {
 	removeCard: function() {
 		console.log(this.id)
 		var self = this;
-		fetch(prefix + baseUrl + '/card/' + this.id, { method: 'DELETE', headers: myHeaders })
+		fetch(baseUrl + '/card/' + this.id, { method: 'DELETE', headers: myHeaders })
 		  .then(function(resp) {
 			return resp.json();
 		  })

@@ -1,5 +1,3 @@
-var prefix = "https://cors-anywhere.herokuapp.com/";
-
 function Column(id, name) {	
 	var self=this;
 	this.id = id;
@@ -13,7 +11,7 @@ function Column(id, name) {
 			data.append('name', cardName);
 			data.append('bootcamp_kanban_column_id', self.id);
 			
-			fetch(prefix + baseUrl + '/card', {
+			fetch(baseUrl + '/card', {
 					method: 'POST',
 					headers: myHeaders,
 					body: data,
@@ -44,7 +42,7 @@ Column.prototype = {
 	removeColumn: function() {
 		var self = this;
 		console.log(self.id)
-		fetch(prefix + baseUrl + '/column/' + self.id, { method: 'DELETE', headers: myHeaders })
+		fetch(baseUrl + '/column/' + self.id, { method: 'DELETE', headers: myHeaders })
 			.then(function(resp) {
 				return resp.json();
 			})

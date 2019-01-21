@@ -128,6 +128,7 @@ body h1, body h2 {
 
 .column-container div .column-card-list {
   list-style: none;
+  min-height: 200px;
 }
 
 .column-container div .column-card-list p {
